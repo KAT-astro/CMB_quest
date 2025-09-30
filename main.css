@@ -4,7 +4,7 @@
     --bg-color: #0d1117;
     --border-color: #30363d;
     --text-color: #c9d1d9;
-    --highlight-color: #58a6ff;
+    --highlight-color: #ff9a28; /* 青からオレンジに変更 */
     --success-color: #ff9a28;
     --error-color: #f85149;
     --font-primary: 'Noto Sans JP', sans-serif;
@@ -50,10 +50,10 @@ main { padding: 1rem; }
     opacity: 0.5;
     background-color: #161b22;
 }
-.mission-card.active { opacity: 1; border-color: var(--highlight-color); box-shadow: 0 0 15px rgba(88, 166, 255, 0.3); }
+.mission-card.active { opacity: 1; border-color: var(--highlight-color); box-shadow: 0 0 15px rgba(255, 154, 40, 0.3); }
 .mission-card.completed { opacity: 0.7; border-color: var(--success-color); }
 .mission-card h2 { font-family: var(--font-display); margin-bottom: 1rem; font-size: 1.5rem; }
-.mission-card.completed h2 { color: var(--success-color); }
+/* .mission-card.completed h2 { color: var(--success-color); }  この行を削除またはコメントアウト */
 
 .quiz-container { margin-top: 1.5rem; }
 .quiz-question { font-weight: 700; margin-bottom: 1rem; }
