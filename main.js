@@ -7,6 +7,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const sfxIncorrect = document.getElementById('sfx-incorrect');
     const sfxNext = document.getElementById('sfx-next');
     const sfxLaunch = document.getElementById('sfx-launch');
+    const allSfx = [sfxCorrect, sfxIncorrect, sfxNext, sfxLaunch];
+
+    // ▼▼▼ 追加 ▼▼▼
+    // ブラウザの音声再生制限を解除するためのフラグ
+    let isAudioUnlocked = false;
+
+    // ユーザーの最初の操作で音声を準備する関数
+    const unlockAudio = () => {
+        if (!isAudioUnlocked) {
+            allSfx.forEach(sfx => {
+                sfx.play().catch(() => {}); // エラーは無視
+                sfx.pause();
+                sfx.currentTime = 0;
+            });
+            isAudioUnlocked = true;
+            // 最初のクリックイベント後、このリスナーは不要なので削除
+            document.body.removeEventListener('click', unlockAudio);
+        }
+    };
+    // ページ上のどこかをクリックしたら初回のみunlockAudioが実行される
+    document.body.addEventListener('click', unlockAudio);
+    // ▲▲▲ 追加ここまで ▲▲▲
 
     // クイズの選択肢ボタンの処理
     document.querySelectorAll('.quiz-option').forEach(button => {
@@ -53,21 +75,16 @@ document.addEventListener('DOMContentLoaded', () => {
             if (nextMissionCard) {
                 nextMissionCard.classList.add('active');
                 
-                // ▼▼▼ ここからが変更箇所 ▼▼▼
-                // 固定ヘッダーの高さを取得して、スクロール位置を調整します
                 const stickyHeader = document.querySelector('.sticky-header');
                 const headerHeight = stickyHeader ? stickyHeader.offsetHeight : 0;
                 
-                // 次のミッションカードの絶対位置を計算
                 const elementTopPosition = nextMissionCard.getBoundingClientRect().top + window.pageYOffset;
-                // ヘッダーの高さと、少しの余白（16px）を引いた位置にスクロール
                 const offsetPosition = elementTopPosition - headerHeight - 16;
     
                 window.scrollTo({
                     top: offsetPosition,
                     behavior: 'smooth'
                 });
-                // ▲▲▲ ここまでが変更箇所 ▲▲▲
             }
 
             if (missionNumber === totalMissions - 1) {
