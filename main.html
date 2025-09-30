@@ -1,4 +1,114 @@
-<section id="mission-5" class="mission-card">
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MISSION: LiteBIRD - 宇宙創生の謎を解け！</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <div class="mission-control">
+        <div class="sticky-header">
+            <header>
+                <h1>MISSION: LiteBIRD</h1>
+                <p class="subtitle">宇宙創生の<span class="highlight">「最初の一瞬」</span>に刻まれた、究極の暗号を解読せよ。</p>
+            </header>
+        
+            <div class="progress-container">
+                <div class="progress-bar-label">ミッション進行度:</div>
+                <div class="progress-bar">
+                    <div id="progressBar" class="progress-bar-inner"></div>
+                </div>
+            </div>
+        </div>
+        <main id="mission-log">
+            <section id="mission-1" class="mission-card active">
+                <h2>MISSION 1：<span class="highlight">最古の光</span>を補足せよ</h2>
+                <div class="mission-briefing">
+                    <p>我々の最初のターゲットは、138億年前に放たれた宇宙最古の光、通称<strong>「CMB」</strong>だ。この光のわずかな"温度のムラ"が、現在の星や銀河の種となった。まずはこの基本情報を理解しろ。</p>
+                </div>
+                <div id="quiz-1" class="quiz-container">
+                    <p class="quiz-question">Q1. CMBの「温度のムラ」は、のちに何になった？</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-mission="1">ブラックホール</button>
+                        <button class="quiz-option" data-mission="1" data-correct="true">星や銀河</button>
+                        <button class="quiz-option" data-mission="1">何も変わらなかった</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+                <div class="mission-result">
+                    <p class="result-title">解読成功！</p>
+                    <p>CMBの温度マップを確認。ミッション1、クリアだ！</p>
+                    <img src="image/Planck_CMB.png" alt="CMB温度ゆらぎマップ">
+                    <button class="next-mission-button" data-mission="1">次のミッションへ ▶</button>
+                </div>
+            </section>
+
+            <section id="mission-2" class="mission-card">
+                <h2>MISSION 2：光の暗号<span class="highlight">「偏光」</span>を地図化せよ</h2>
+                <div class="mission-briefing">
+                    <p>CMBには<strong>「偏光」</strong>という、光の"揺れの向き"で描かれた暗号が隠されている。この偏光を地図化するため、信号を2種類に分けて観測する。<strong>「Q」</strong>は光の<span class="highlight">縦横成分</span>を、<strong>「U」</strong>は<span class="highlight">斜め成分</span>を示す信号だ。</p>
+                </div>
+                <div id="quiz-2" class="quiz-container">
+                    <p class="quiz-question">Q2. 「斜め」方向の偏光を示す信号はどっち？</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-mission="2">Q信号</button>
+                        <button class="quiz-option" data-mission="2" data-correct="true">U信号</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+                <div class="mission-result">
+                    <p class="result-title">地図化完了！</p>
+                    <p>偏光信号のデータ取得に成功。暗号の全体像が見えてきたぞ！</p>
+                    <button class="next-mission-button" data-mission="2">次のミッションへ ▶</button>
+                </div>
+            </section>
+
+            <section id="mission-3" class="mission-card">
+                <h2>MISSION 3：<span class="highlight">ターゲット信号</span>を特定せよ</h2>
+                <div class="mission-briefing">
+                    <p>我々が追う真のターゲットは、偏光パターンの中でも<span class="highlight">渦を巻く特殊な信号</span>…コードネーム<strong>「Bモード」</strong>だ。この「Bモード」こそ、宇宙が急膨張した「インフレーション」の決定的証拠となる。</p>
+                </div>
+                <div id="quiz-3" class="quiz-container">
+                    <p class="quiz-question">Q3. 我々が探している渦巻き状のターゲット信号は？</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-mission="3">Eモード</button>
+                        <button class="quiz-option" data-mission="3" data-correct="true">Bモード</button>
+                        <button class="quiz-option" data-mission="3">Cモード</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+                 <div class="mission-result">
+                    <p class="result-title">特定完了！</p>
+                    <p>ターゲット信号「Bモード」のパターンをロックオン。これが我々の最終目標だ。</p>
+                    <img src="image/CMB_EBmode.png" alt="EモードとBモードのイメージ図" class="small-image">
+                    <button class="next-mission-button" data-mission="3">次のミッションへ ▶</button>
+                </div>
+            </section>
+            
+            <section id="mission-4" class="mission-card">
+                <h2>MISSION 4：<span class="highlight">ノイズ源</span>を分析せよ</h2>
+                <div class="mission-briefing">
+                    <p>ターゲット信号に銀河からのノイズが混じっている！このノイズは、光の<strong>「周波数」</strong>（色のようなもの）ごとに見え方が違う。様々な周波数で観測し、ノイズの正体を暴くのだ。</p>
+                </div>
+                <div id="quiz-4" class="quiz-container">
+                    <p class="quiz-question">Q4. 邪魔なノイズを取り除くために何を使い分ける？</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-mission="4" data-correct="true">観測する周波数</button>
+                        <button class="quiz-option" data-mission="4">望遠鏡の大きさ</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+                <div class="mission-result">
+                    <p class="result-title">分析完了！</p>
+                    <p>各周波数ごとのノイズパターンを特定。これを使えば邪魔な信号を除去できるはずだ。</p>
+                    <img src="image/CMB_map_freq.jpg" alt="様々な周波数で観測した全天マップ">
+                    <button class="next-mission-button" data-mission="4">次のミッションへ ▶</button>
+                </div>
+            </section>
+
+            <section id="mission-5" class="mission-card">
                  <h2>FINAL MISSION：<span class="highlight">LiteBIRD</span>、発進準備を完了せよ！</h2>
                 <div class="mission-briefing">
                     <p>全ての解析シミュレーションが完了した。我々の切り札、高感度観測衛星<strong>「LiteBIRD」</strong>を、日本の<strong>JAXA</strong>が開発した新型の<strong>H3ロケット</strong>で発進させる！その最終承認を行うのだ！</p>
@@ -10,3 +120,14 @@
                     <img src="image/LiteBIRD_satellite.png" alt="LiteBIRDイメージ図" class="small-image">
                 </div>
             </section>
+        </main>
+    </div>
+
+    <audio id="sfx-correct" src="https://cdn.pixabay.com/download/audio/2022/03/10/audio_c848a6a222.mp3" preload="auto"></audio>
+    <audio id="sfx-incorrect" src="https://cdn.pixabay.com/download/audio/2022/03/20/audio_010005d51d.mp3" preload="auto"></audio>
+    <audio id="sfx-next" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1947a5db51.mp3" preload="auto"></audio>
+    <audio id="sfx-launch" src="https://cdn.pixabay.com/download/audio/2022/10/22/audio_24e00a331a.mp3" preload="auto"></audio>
+
+    <script src="main.js"></script>
+</body>
+</html>
