@@ -52,7 +52,22 @@ document.addEventListener('DOMContentLoaded', () => {
             const nextMissionCard = document.getElementById(`mission-${nextMissionNumber}`);
             if (nextMissionCard) {
                 nextMissionCard.classList.add('active');
-                nextMissionCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // ▼▼▼ ここからが変更箇所 ▼▼▼
+                // 固定ヘッダーの高さを取得して、スクロール位置を調整します
+                const stickyHeader = document.querySelector('.sticky-header');
+                const headerHeight = stickyHeader ? stickyHeader.offsetHeight : 0;
+                
+                // 次のミッションカードの絶対位置を計算
+                const elementTopPosition = nextMissionCard.getBoundingClientRect().top + window.pageYOffset;
+                // ヘッダーの高さと、少しの余白（16px）を引いた位置にスクロール
+                const offsetPosition = elementTopPosition - headerHeight - 16;
+    
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+                // ▲▲▲ ここまでが変更箇所 ▲▲▲
             }
 
             if (missionNumber === totalMissions - 1) {
@@ -66,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
         sfxLaunch.play(); // 発進の効果音
         const missionCard = document.getElementById('mission-6');
         
-        // missionCard.classList.add('completed'); // この行を削除して、カードが暗くならないようにする
         e.target.disabled = true;
         e.target.textContent = `[ 発 射 完 了 ]`;
         const resultDiv = missionCard.querySelector('.mission-result');
